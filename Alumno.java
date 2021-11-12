@@ -12,7 +12,13 @@ public class Alumno {
      */
     public Alumno(String nombreCompleto, String numeroMatriculaAlumno, int edadAlumno) {
         nombre = nombreCompleto;
+            if (nombreCompleto.length() < 3){
+                System.out.println("Error: el nombre debe tener mas de tres caracteres");
+            }
         numeroMatricula = numeroMatriculaAlumno;
+            if (numeroMatriculaAlumno.length() < 4){
+                System.out.println("Error: el numero de matricula debe tener cuatro caracteres");
+            }
         edad = edadAlumno;
     }
 

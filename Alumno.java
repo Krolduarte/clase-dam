@@ -1,5 +1,5 @@
 public class Alumno {
-    
+
     // el nombre completo del alumno
     private String nombre;
     // el numero de matricula
@@ -12,14 +12,15 @@ public class Alumno {
      */
     public Alumno(String nombreCompleto, String numeroMatriculaAlumno, int edadAlumno) {
         nombre = nombreCompleto;
-            if (nombreCompleto.length() < 3){
-                System.out.println("Error: el nombre debe tener mas de tres caracteres");
-            }
+        if (nombreCompleto.length() < 3){
+            System.out.println("Error: el nombre debe tener mas de tres caracteres");
+        }
         numeroMatricula = numeroMatriculaAlumno;
-            if (numeroMatriculaAlumno.length() < 4){
-                System.out.println("Error: el numero de matricula debe tener cuatro caracteres");
-            }
+        if (numeroMatriculaAlumno.length() < 4){
+            System.out.println("Error: el numero de matricula debe tener cuatro caracteres");
+        }
         edad = edadAlumno;
+
     }
 
     /**
@@ -28,26 +29,34 @@ public class Alumno {
     public String getNombre() {
         return nombre;
     }
-    
+
     /**
      * Cambia el nombre del alumno
      */
     public void cambiarnombre(String nuevoNombre) {
         nombre = nuevoNombre;
     }
-    
+
     /**
      * Imprime por pantalla los detalles del alumno
      */
     public void imprimeDetalles() {
-        System.out.println(nombre + " (" + numeroMatricula + ") - " + edad + " aÃ±os");
+        System.out.println(nombre + " (" + numeroMatricula + ") - " + edad + " años");
     }
-    
+
     /**
      * Devuelve el nombre de usuario que el alumno debe configurar
      * en su cuenta de Github en formato de 7 caracateres
      */
     public String getNombreUsuarioGithub() {
-        return nombre.substring(0, 3) + numeroMatricula.substring(0, 4);
+        String datosIncompletos = "";  
+        datosIncompletos =nombre + numeroMatricula;
+        return datosIncompletos;
     }
+
 }
+
+
+/**
+ * return nombre.substring(0, 3) + numeroMatricula.substring(0, 4);
+ */

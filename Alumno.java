@@ -49,22 +49,50 @@ public class Alumno {
      * en su cuenta de Github en formato de 7 caracateres
      */
     public String getNombreUsuarioGithub() {
-        String datosIncompletos = "";
-        if (nombre.length() <= 3){
-            datosIncompletos = nombre.substring(0, nombre.length()) + numeroMatricula.substring(0,numeroMatricula.length()) ;       
+        String nombreEstudiante = "";
+        String matriculaEstudiante = "";
+        
+        if (nombre.length()>= 3 ){
+            nombreEstudiante = nombre.substring(0,3); 
         }
-        else if (numeroMatricula.length() <= 4){
-            datosIncompletos = nombre.substring(0, nombre.length()) + numeroMatricula.substring(0,numeroMatricula.length());
+        else {
+            nombreEstudiante = nombre.substring(0, nombre.length()); 
         }
         
-        else {
-            datosIncompletos = nombre.substring(0,3) + numeroMatricula.substring(0,4);
+        if (numeroMatricula.length() <= 4){
+            matriculaEstudiante =  numeroMatricula.substring(0,numeroMatricula.length());  
         }
-        return datosIncompletos;
+        else {
+            matriculaEstudiante = numeroMatricula.substring(0,4); 
+        }
+          
+        
+        return nombreEstudiante + matriculaEstudiante;
     }
 
 }
 
 /**
+ * 
+ * 
+ * 
+ * if (nombre.length()>= 3 ){
+            nombreEstudiante = nombre.substring(0,3); 
+        }
+        else if (nombre.length() < 3){
+            nombreEstudiante = nombre.substring(0, nombre.length()); 
+        }
+        
+        if (numeroMatricula.length() <= 4){
+            matriculaEstudiante =  numeroMatricula.substring(0,numeroMatricula.length());  
+        }
+        else if (numeroMatricula.length() > 4){
+            nombreEstudiante = numeroMatricula.substring(0,4); 
+        }
+        else {
+             nombreEstudiante = nombre.substring(0,3);
+             matriculaEstudiante = numeroMatricula.substring(0,4);  
+        }
+        return nombreEstudiante + matriculaEstudiante;
  * return nombre.substring(0, 3) + numeroMatricula.substring(0, 4);
  */

@@ -50,9 +50,13 @@ public class Alumno {
      */
     public String getNombreUsuarioGithub() {
         String datosIncompletos = "";
-        if (nombre.length() < 3 && numeroMatricula.length() < 4) {
+        if (nombre.length() <= 3){
+            datosIncompletos = nombre.substring(0, nombre.length()) + numeroMatricula.substring(0,numeroMatricula.length()) ;       
+        }
+        else if (numeroMatricula.length() <= 4){
             datosIncompletos = nombre.substring(0, nombre.length()) + numeroMatricula.substring(0,numeroMatricula.length());
-        }        
+        }
+        
         else {
             datosIncompletos = nombre.substring(0,3) + numeroMatricula.substring(0,4);
         }

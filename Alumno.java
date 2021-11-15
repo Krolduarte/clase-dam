@@ -49,13 +49,17 @@ public class Alumno {
      * en su cuenta de Github en formato de 7 caracateres
      */
     public String getNombreUsuarioGithub() {
-        String datosIncompletos = "";  
-        datosIncompletos =nombre + numeroMatricula;
+        String datosIncompletos = "";
+        if (nombre.length() < 3 && numeroMatricula.length() < 4) {
+            datosIncompletos = nombre.substring(0, nombre.length()) + numeroMatricula.substring(0,numeroMatricula.length());
+        }        
+        else {
+            datosIncompletos = nombre.substring(0,3) + numeroMatricula.substring(0,4);
+        }
         return datosIncompletos;
     }
 
 }
-
 
 /**
  * return nombre.substring(0, 3) + numeroMatricula.substring(0, 4);

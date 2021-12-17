@@ -51,48 +51,34 @@ public class Alumno {
     public String getNombreUsuarioGithub() {
         String nombreEstudiante = "";
         String matriculaEstudiante = "";
-        
+
         if (nombre.length()>= 3 ){
             nombreEstudiante = nombre.substring(0,3); 
         }
         else {
             nombreEstudiante = nombre.substring(0, nombre.length()); 
         }
-        
+
         if (numeroMatricula.length() <= 4){
             matriculaEstudiante =  numeroMatricula.substring(0,numeroMatricula.length());  
         }
         else {
             matriculaEstudiante = numeroMatricula.substring(0,4); 
         }
-          
-        
+
         return nombreEstudiante + matriculaEstudiante;
     }
 
+    public String getNumeroMatricula() {
+        return numeroMatricula;
+    }
+
+    public int getEdad() {
+        return edad;
+    }
+    
+    public String getDatos(){
+        return nombre + "(" +numeroMatricula+ ")" + "-" + edad + "años";
+    }
 }
 
-/**
- * 
- * 
- * 
- * if (nombre.length()>= 3 ){
-            nombreEstudiante = nombre.substring(0,3); 
-        }
-        else if (nombre.length() < 3){
-            nombreEstudiante = nombre.substring(0, nombre.length()); 
-        }
-        
-        if (numeroMatricula.length() <= 4){
-            matriculaEstudiante =  numeroMatricula.substring(0,numeroMatricula.length());  
-        }
-        else if (numeroMatricula.length() > 4){
-            nombreEstudiante = numeroMatricula.substring(0,4); 
-        }
-        else {
-             nombreEstudiante = nombre.substring(0,3);
-             matriculaEstudiante = numeroMatricula.substring(0,4);  
-        }
-        return nombreEstudiante + matriculaEstudiante;
- * return nombre.substring(0, 3) + numeroMatricula.substring(0, 4);
- */
